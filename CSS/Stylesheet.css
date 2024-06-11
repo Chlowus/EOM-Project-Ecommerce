@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap');
+
+/* Nav Bar */
+
+#main nav {
+    margin-top: -10px;
+    background-color: #1E1E1E !important;
+    height: 140px;
+    width: 100vw;
+    box-shadow: 0px 2px 5px #757575;
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+
+.sticky-top {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#main .nav-logo img {
+    height: 220px;
+    width: 270px;
+    object-fit: cover;
+    margin-top: -41px;
+  }
+
+  #main .nav-title {
+    display: flex;
+    justify-content: space-evenly;
+    color: #fff !important;
+    font-family: Poppins;
+    font-size: 18px;
+    padding-top: 60px;
+    font-weight: 200;
+    margin-right: 15px;
+    text-decoration: none;
+  } 
+
+  #main .active {
+        color: #616161 !important;
+  }
+
+  /* @media screen and (max-width: 425) {
+    /* .offcanvas-header {
+        display: grid;
+        grid-template-columns: auto;
+    }*/ 
+
+  /* Footer */
+
+  .footer {
+    padding-top: 30px;
+    margin-top: 50px;
+    height: 80px;
+    background-color: #1E1E1E;
+    box-shadow: 0px -2px 5px #757575;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+}
+
+/*  */
+/* Home */
+/*  */
+
+/* 
+.home-body body {
+    margin: 0;
+    padding: 0;
+    width: 90vw;
+}
+
+.home-main main{
+    width: 100vw;
+}  */
+
+.home-slider{
+    margin-top: 138px;
+    width: 100vw;
+    height: 570px;
+    overflow-x: hidden;
+    overflow-x: hidden;
+}
+
+.home-slides{
+    width: 500%;
+    height: 570px;
+    display: flex;
+    overflow: hidden;
+}
+
+.home-slides input{
+    display: none;
+}
+
+.home-slide{
+    width: 20%;
+    height: 600px;
+    transition: 2s;
+}
+
+.home-slide img {
+    margin-left: 0px; 
+    margin-top: -70px;
+    width: 100%; 
+    height: 700px;
+    object-fit: cover; 
+    
+}
+/* Manual slide */
+
+.home-nav-manual{
+    position: absolute;
+    width: 100%;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-manual-btn{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.home-manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.home-manual-btn:hover{
+    background: red;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+/* automatic slide */
+
+.home-nav-auto{
+    position: absolute;
+    display: flex;
+    width: 880px;
+    justify-content: center;
+    margin-top: 460px;
+
+}
+
+.home-nav-auto div{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.home-nav-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .home-nav-auto .home-auto-btn1{
+    background: white;
+}
+
+#radio2:checked ~ .home-nav-auto .home-auto-btn2{
+    background: white;
+}
+
+#radio3:checked ~ .home-nav-auto .home-auto-btn3{
+    background: white;
+}
+
+#radio4:checked ~ .home-nav-auto .home-auto-btn4{
+    background: white;
+}
+
+.home-slide1-text{
+    margin-top: -500px;
+    margin-left: 1090px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.home-slide1-text h4{
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.home-slide1-text h3{
+    font-family: Russo One;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.home-sn-btn {
+    height: 40px;
+    width: 160px;
+    border: 2px solid white;
+    background-color: #ffffff00;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 20px;
+}
+
+.home-sn-btn:hover {
+    height: 40px;
+    width: 160px;
+    border: 2px solid white;
+    background-color: #ffffff9a;
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+}
+
+.home-slide2-text{
+    margin-top: -500px;
+    margin-left: 1090px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.home-slide2-text h3{
+    font-family: Russo One;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.home-slide3-text{
+    margin-top: -500px;
+    margin-left: 1090px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.home-slide3-text h3{
+    font-family: Russo One;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.home-slide4-text{
+    margin-top: -500px;
+    margin-left: 1090px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.home-slide4-text h3{
+    font-family: Russo One;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.home-products-container{
+    height: 120vh;
+    width: 100vw;
+}
+
+.home-products-container h2{
+    text-align: center;
+    font-family: Montserrat;
+    margin-top: 100px;
+    font-size: 80px;
+    color: #000;
+    font-weight: 400;
+}
+
+.home-products-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+}
+
+.card{
+    /* border: none !important; */
+}
+
+#sale-border{
+    height: 30px;
+    width: 100px;
+    border: 2px solid #397D3C;
+    background-color: #397d3c66;
+    color: white;
+    font-family: Roboto;
+    
+}
+
+#sale-border h6{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.home-products-cards .card{
+    margin-left: 97px;
+    margin-top: 110px;
+}
+
+.home-products-cards h5 {
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 600;
+ }
+
+ .card-text{
+    margin-top: 15px;
+    text-align: center;
+    font-family: Poppins;
+ }
+
+.home-products-cards h3 {
+    margin-top: 10px;
+    text-align: center;
+    color: #000;
+    font-family: Roboto;
+ }
+ 
+ .home-products-cards .now {
+    margin-top: 10px;
+    text-align: center;
+    color: #397D3C;
+ }
+
+.home-products-cards .sale-btn {
+   color: #397D3C;
+   border-color: #397D3C;
+   background-color: #fff;
+   margin-top: 15px;
+   display: flex;
+   justify-content: center;
+}
+
+.home-products-cards .sale-btn:hover {
+    color: #fff;
+    border-color: #397D3C;
+    background-color: #397D3C;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+/* About */
+/*  */
+
+.about-body {
+    /* overflow: hidden; */
+    max-height: 100vh;
+    max-width: 145.4vw;
+    font-family: Bitter;
+    overflow-x: hidden;
+}
+
+.about-main {
+    height: 50px;
+    width: 100vw;
+}
+
+.image-container-about{
+    top: 0;
+    height: 120vh;
+    width: 145.4vw;
+    
+}
+.image-container-about img{
+    margin-top: -110px;
+    height: 110vh;
+    width: 145.4vw;
+    object-fit: cover;
+    margin-left: -380px;
+}
+
+.image-container-about h1{
+    margin-top: -430px;
+    margin-left: 400px;
+    font-family: Montserrat;
+    font-size: 150px;
+    color: #000;
+    font-weight: 600;
+}
+
+.about-us-info-container h2{
+    font-family: Montserrat;
+    font-size: 80px;
+    color: #000;
+    text-align: center;
+    margin-top: -130px;
+    font-weight: 400;
+}
+
+.about-us-info-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.about-us-info-text .about-p1 {
+    text-wrap: wrap;
+    font-family: Poppins;
+    color: #000;
+    text-align: center;
+    margin-top: 150px;
+    margin-left: 80px;
+}
+
+.about-us-info-text .about-p2 {
+    text-wrap: wrap;
+    font-family: Poppins;
+    color: #000;
+    text-align: center;
+    margin-top: 150px;
+    margin-right: 80px;
+}
+
+.about-us-info-text img {
+    height: 60vh;
+    width: 40vw;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-left: 100px;
+}
+
+.about-us-info-text .about-p3 {
+    text-wrap: wrap;
+    font-family: Poppins;
+    color: #000;
+    text-align: center;
+    margin-top: 110px;
+    margin-left: 80px;
+}
