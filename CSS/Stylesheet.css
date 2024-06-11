@@ -66,18 +66,14 @@
 /* Home */
 /*  */
 
-
-/* .home-body {
+/* 
+.home-body body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+    width: 90vw;
+}
 
-/* .home-main {
-    height: 50px;
+.home-main main{
     width: 100vw;
 }  */
 
@@ -294,7 +290,78 @@
     font-weight: 400;
 }
 
+.home-products-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+}
 
+.card{
+    /* border: none !important; */
+}
+
+#sale-border{
+    height: 30px;
+    width: 100px;
+    border: 2px solid #397D3C;
+    background-color: #397d3c66;
+    color: white;
+    font-family: Roboto;
+    
+}
+
+#sale-border h6{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.home-products-cards .card{
+    margin-left: 97px;
+    margin-top: 110px;
+}
+
+.home-products-cards h5 {
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 600;
+ }
+
+ .card-text{
+    margin-top: 15px;
+    text-align: center;
+    font-family: Poppins;
+ }
+
+.home-products-cards h3 {
+    margin-top: 10px;
+    text-align: center;
+    color: #000;
+    font-family: Roboto;
+ }
+ 
+ .home-products-cards .now {
+    margin-top: 10px;
+    text-align: center;
+    color: #397D3C;
+ }
+
+.home-products-cards .sale-btn {
+   color: #397D3C;
+   border-color: #397D3C;
+   background-color: #fff;
+   margin-top: 15px;
+   display: flex;
+   justify-content: center;
+}
+
+.home-products-cards .sale-btn:hover {
+    color: #fff;
+    border-color: #397D3C;
+    background-color: #397D3C;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+ }
 
 
 
