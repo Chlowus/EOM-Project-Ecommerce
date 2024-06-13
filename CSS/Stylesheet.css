@@ -63,7 +63,7 @@
 }
 
 /*  */
-/* Home */
+/*============================================================= Home ========================================================================*/
 /*  */
 
 /* 
@@ -751,13 +751,167 @@
  }
 
 
+/*  */
+/* ======================================================================== Checkout =============================================== */
 
+.c-products-container{
+    height: 800vh;
+    width: 100vw;
+}
 
+.c-products-container h2{
+    text-align: center;
+    font-family: Montserrat;
+    margin-top: -90px;
+    font-size: 80px;
+    color: #000;
+    font-weight: 400;
+}
 
+.cart-container {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 90px;
+}
 
+.selected-items-display{
+    border: 1px solid black;
+    height: 400px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+#cart-item-img{
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+    margin-left: 40px;
+    border: 1px solid black;
+    margin-top: 40px;
+    border-radius: 20px;
+}
+
+.cart-item-info{
+    margin-top: -200px;
+}
+
+.cart-item-name{
+    margin-left: 400px;
+    font-family: Montserrat;
+}
+
+.cart-item-quantity{
+    margin-top: 20px;
+    margin-left: 400px;
+    font-family: Montserrat;
+}
+
+.cart-item-price{
+    margin-top: 200px;
+    margin-left: 650px;
+    font-family: Roboto;
+}
+
+.selected-items-price-calc{
+    border: 1px solid black;
+    height: 400px;
+    width: 460px;
+    border-radius: 20px;
+    margin-left: 10px;
+    background-color: #000;
+    color: white;
+}
+
+.selected-items-price-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.sub-total{
+    font-family: Montserrat;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.sub-total-price{
+    font-family: Montserrat;
+    margin-top: 40px;
+    margin-left: 60px;
+}
+
+.total{
+    font-family: Montserrat;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.total-price{
+    font-family: Montserrat;
+    margin-top: 100px;
+    margin-left: 60px;
+}
+
+.selected-items-btn{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.checkout-btn{
+    width: 300px;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 25px;
+    border: 2px solid #397D3C;
+    background-color: #397d3c5f;
+    margin-left: 80px;
+}
+
+.checkout-btn:hover{
+    width: 300px;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 25px;
+    border: 2px solid #397D3C;
+    background-color: #397d3C;
+    margin-left: 80px;
+}
+
+.clear-cart-btn{
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 25px;
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.248);
+    margin-left: 80px;
+}
+
+.clear-cart-btn:hover{
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 25px;
+    border: 2px solid red;
+    background-color: red;
+    margin-left: 80px;
+}
 
 /*  */
-/* About */
+/*================================================== About ====================================================== */
 /*  */
 
 .about-body {
@@ -845,3 +999,8 @@
     margin-top: 110px;
     margin-left: 80px;
 }
+
+/*  */
+/*===================================== Admin ============================================================== */
+/*  */
+
