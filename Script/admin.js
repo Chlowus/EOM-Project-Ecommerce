@@ -1,341 +1,170 @@
-let shoes = [];
-//set
-
-
-// function to create my object
-function Shoe(brand, description, price, url) {
-  this.brand = brand;
-  this.description = description;
-  this.price = price;
-  this.url = url;
-}
-// filling the object with data
-let shoeItem = new Shoe(
-  "Nike",
-  "jordan 1",
-  1500,
-  "https://i.postimg.cc/Z5kcYyPS/jordan1s.jpg"
-);
-let shoeItem2 = new Shoe(
-  "Nike",
-  "Air force",
-  1000,
-  "https://i.postimg.cc/tRdfhY8z/air-force-1-07-easyon-shoes-lpj-TWM.png"
-);
-let shoeItem3 = new Shoe(
-  "Nike",
-  "dunks",
-  1200,
-  "https://i.postimg.cc/vZj0VNwp/png-transparent-nike-skateboarding-nike-dunk-sneakers-skate-shoe-nike-blue-white-outdoor-shoe.png"
-);
-let shoeItem4 = new Shoe(
-  "Nike",
-  "jordan 4",
-  1700,
-  "https://i.postimg.cc/zBMhd90r/png-transparent-nike-air-max-air-jordan-jumpman-sneakers-nike-white-fashion-outdoor-shoe.png"
-);
-
-let adidas = new Shoe(
-  "adidas",
-  "spiderman miles morales",
-  1500,
-  "https://i.postimg.cc/sXcLD2v4/spider-man-2-adidas-shoes-ign-2023-preorder-order-where-to-buy-1696341802109.png"
-);
-let adidas2 = new Shoe(
-  "adidas",
-  "superstar",
-  600,
-  "https://i.postimg.cc/rsCkyZQr/adidas-superstar-adidas-originals-sneakers-shoe-adidas.jpg"
-);
-let adidas3 = new Shoe(
-  "adidas",
-  "high top",
-  800,
-  "https://i.postimg.cc/fyXPj8FR/adidas-ugly.jpg"
-);
-let adidas4 = new Shoe(
-  "adidas",
-  "sport",
-  900,
-  "https://i.postimg.cc/26nd0gzM/png-clipart-adidas-chaussure-gazelle-sports-shoes-mens-adidas-originals-gazelle-adidas-white-outdoor.png"
-);
-
-let puma = new Shoe(
-  "puma",
-  "white and green",
-  900,
-  "https://i.postimg.cc/0yfxyV07/puma4.jpg"
-);
-let puma2 = new Shoe(
-  "puma",
-  "green and black",
-  700,
-  "https://i.postimg.cc/pXSLtGkr/puma.jpg"
-);
-let puma3 = new Shoe(
-  "puma",
-  "limited edition",
-  1200,
-  "https://i.postimg.cc/XJBTdLdH/lim-puma.jpg"
-);
-let puma4 = new Shoe(
-  "puma",
-  "black and white",
-  500,
-  "https://i.postimg.cc/BQ4Vn4Yw/puma6.jpg"
-);
-
-let converse = new Shoe(
-  "converse",
-  "high-top",
-  550,
-  'https://i.postimg.cc/nLdrsR2y/con.jpg"'
-);
-let converse2 = new Shoe(
-  "converse",
-  "low-top",
-  600,
-  "https://i.postimg.cc/wTVpTt0P/verse.jpg"
-);
-let converse3 = new Shoe(
-  "converse",
-  "limited edition high-top",
-  1000,
-  "https://i.postimg.cc/Vs7NDVc5/lim-con.jpg"
-);
-let converse4 = new Shoe(
-  "converse",
-  "limited edition high-top",
-  1200,
-  "https://i.postimg.cc/RC3rxsHW/lim-verse.jpg"
-);
-
-let vans = new Shoe(
-  "vans",
-  "low-top",
-  800,
-  "https://i.postimg.cc/gj5rbFRY/vans.jpg"
-);
-let vans2 = new Shoe(
-  "vans",
-  "high-top",
-  900,
-  "https://i.postimg.cc/4x17nMR1/vans2.jpg"
-);
-let vans3 = new Shoe(
-  "vans",
-  "sliders",
-  1500,
-  "https://i.postimg.cc/bNgSwWh9/vans4.jpg"
-);
-let vans4 = new Shoe(
-  "vans",
-  "limited edition high-top",
-  2000,
-  "https://i.postimg.cc/zGCkk59Z/vans5.jpg"
-);
-
-
-//pushes object into my array
-shoes.push(
-  shoeItem,
-  shoeItem2,
-  shoeItem3,
-  shoeItem4,
-  adidas,
-  adidas2,
-  adidas3,
-  adidas4,
-  converse,
-  converse2,
-  converse3,
-  converse4,
-  puma,
-  puma2,
-  puma3,
-  puma4,
-  vans,
-  vans2,
-  vans3,
-  vans4
-);
-//sets localstorage
-localStorage.setItem("storage", JSON.stringify(shoes));
-
-//function for set, and get localstorage
-function setAndGet() {
-  localStorage.setItem("storage", JSON.stringify(shoes));
-  shoes = JSON.parse(localStorage.getItem("storage"));
-}
-//table used to display items from localstorage
-let table = document.querySelector("table");
-window.onload = function unity() {
-    //if array is empty display spinner
-  if (shoes.length === 0) {
-    table.innerHTML = `
-         <div id="cen">
-          <div class="spinner-border text-danger " role="status">
-            <span class="visually-hidden">Loading...</span>
-           </div>
-        </div>
-      `;
-  } else {
-    let products = shoes.map((item, index) => {
-      return `
-            
-            <tr>
-            <td class ="text-white">${index + 1}</td>
-            <td class ="text-white">${item.brand}</td>
-            <td class ="text-white">${item.description}</td>
-            <td class ="text-white">R${item.price}</td>
-            <td class ="text-white"><img src="${
-              item.url
-            }" style="width: 100px; height: 100px;"></td>
-            <td><button class="btn btn-primary edit" value =${index} data-edit>edit</button></td>
-            <td><button class="btn btn-primary delete" value =${index} data-delete>delete</button></td>
-            </tr>
-            
-            `;
-    });
-    table.innerHTML = products.join("");
-  }
-};
-//function to delete item from the array
-function remove(position) {
-  shoes.splice(position, 1);
-  //nested function
-  setAndGet();
-  //nested function
-  window.onload();
+function CreateBicycle(id, name, subCategory, category, image, description, quantity, price) {
+    this.id = id;
+    this.name = name;
+    this.subCategory = subCategory;
+    this.category = category;
+    this.image = image;
+    this.description = description;
+    this.quantity = quantity;
+    this.price = price;
 }
 
-table.addEventListener("click", function (event) {
-  if (event.target.classList.contains("delete")) {
-    remove(event.target.value);
-  }
-});
+// Create bicycle items
+let roadBikes = [
+    new CreateBicycle(1, 'Bianchi Via Nirone Sora Bike', 'Road Bicycle', 'Bicycle', 'https://chlowus.github.io/hostedimages/14.png', '#', 1, 25975),
+    new CreateBicycle(2,'Pinarello Dogma F Disc Kaizen Pro Bike','Road Bicycle','Bicycle','https://chlowus.github.io/hostedimages/15.png','#', 1,303356),
+    new CreateBicycle(3,'Cervelo S5 Kaizen Pro Black Bike','Road Bicycle','Bicycle','https://chlowus.github.io/hostedimages/16.png','#', 1,359946),
+    new CreateBicycle(4,'Cannondale SuperSix EVO LAB71 Daytona Team Bike','Road Bicycle','Bicycle','https://chlowus.github.io/hostedimages/22.png','#',1,218008),
+];
 
-// used so when item is added it will be displayed
-document.addEventListener("DOMContentLoaded", function () {
-  // Attach a click event listener to the element with the ID "add"
-  document.getElementById("add").addEventListener("click", function (event) {
-    // Get references to input elements in the form with specific IDs
-    let item = document.getElementById("item");
-    let img = document.getElementById("img");
-    let des = document.getElementById("des");
-    let price = document.getElementById("price");
-    let result = document.getElementById("result");
+let trailBikes = [
+    new CreateBicycle(5, 'Pinarello Dogma XC XX SL Eagle Transmission', 'Trail Bicycle', 'Bicycle', 'https://chlowus.github.io/hostedimages/18.png', '#', 1, 241201),
+    new CreateBicycle(6,'Cervelo ZFS-5 GX Eagle AXS Transmission Bike','Trail Bicycle','Bicycle','https://chlowus.github.io/hostedimages/19.png','#',1,115961),
+    new CreateBicycle(7,'Cannondale Scalpel HT HM Ultimate Bike','Trail Bicycle','Bicycle','https://chlowus.github.io/hostedimages/20.png','#',1,204093),
+    new CreateBicycle(8,'Scott Genius 900 Tuned AXS Bike','Trail Bicycle','Bicycle','https://chlowus.github.io/hostedimages/21.png','#',1,112993),
+];
 
-    // Clear any previous results displayed in the "result" elements
-    result.innerHTML = "";
+let equipment = [
+    new CreateBicycle(9, 'Continental Gatorskin Black Edition Foldable Clincher Tire', 'Equipment', 'Equipment', 'https://chlowus.github.io/hostedimages/7.png', '#', 1, 1002),
+    new CreateBicycle(10,'Continental Xynotal Trail Soft 29" Tire','Equipment','Equipment','https://chlowus.github.io/hostedimages/8.png','#',1,1206),
+    new CreateBicycle(11,'Garmin Edge 130 Plus Bundled Cycling Computer','Equipment','Equipment','https://chlowus.github.io/hostedimages/9.png','#',1,4642),
+    new CreateBicycle(12,'Lezyne Super SV23 Multi-Tool','Equipment','Equipment','https://chlowus.github.io/hostedimages/10.png','#',1,1114),
+    new CreateBicycle(13,'PRO Micro C02 Inflator System','Equipment','Equipment','https://chlowus.github.io/hostedimages/11.png','#',1,371),
+    new CreateBicycle(14,'Elite Fly Tour de France Bottle White 750ml','Equipment','Equipment','https://chlowus.github.io/hostedimages/12.png','#',1,204),
+];
 
-    // Prevent the default form submission behavior
-    event.preventDefault();
+// Combine all bicycle items into a single array
+let allBicycles = [].concat(roadBikes, trailBikes, equipment);
 
-     // Validate input fields using the validateInput function
-    if (validateInput(item, img, des, price)) {
-       // Create a new Shoe object and add it to the "shoes" array
-      shoes.push(
-        new Shoe(item.value, des.value, parseFloat(price.value), img.value)
-      );
+// Function to display bicycles in a table format
+function displayBicycles() {
+    let table = document.querySelector("table");
 
-      // Clear input fields after successfully adding a new Shoe
-      item.value = "";
-      img.value = "";
-      des.value = "";
-      price.value = "";
+    // Clear previous content
+    table.innerHTML = '';
 
-      // Update storage and display
-      setAndGet();
-      window.onload();
-    }
-  });
-
-  // Function to validate input fields
-  function validateInput(item, img, des, price) {
-    // Check if any of the fields are empty
-    if (
-      item.value === "" ||
-      img.value === "" ||
-      des.value === "" ||
-      price.value === ""
-    ) {
-      alert("Please fill in all fields to add a new product!");
-      return false;
-    }
-    return true;
-  }
-});
-//function to edit the items on the table
-function handleEditClick(index) {
-  // Populate modal fields with current data
-  let editBrandInput = document.getElementById("editBrand");
-  let editDescriptionInput = document.getElementById("editDescription");
-  let editPriceInput = document.getElementById("editPrice");
-  let editURLInput = document.getElementById("editURL");
-
-  editBrandInput.value = shoes[index].brand || "";
-  editDescriptionInput.value = shoes[index].description || "";
-  editPriceInput.value = shoes[index].price || "";
-  editURLInput.value = shoes[index].url || "";
-
-  // Show the edit modal
-  document.getElementById("editModal").style.display = "block";
-
-  // Store the index in a data attribute for later use
-  document.getElementById("editModal").setAttribute("data-index", index);
-}
-
-//  this function is used  to close the edit modal
-function closeEditModal() {
-  document.getElementById("editModal").style.display = "none";
-}
-
-//  this function is used  to  save the changes when the "Save changes" button is clicked
-function saveChanges() {
-  // Retrieve values from modal fields
-  let editedBrand = document.getElementById("editBrand").value.trim();
-  let editedDescription = document
-    .getElementById("editDescription")
-    .value.trim();
-  let editedPrice = document.getElementById("editPrice").value.trim();
-  let editedURL = document.getElementById("editURL").value.trim();
-
-  // Retrieve the index from the data attribute
-  let index = document.getElementById("editModal").getAttribute("data-index");
-
-  // Update data in your array
-  shoes[index].brand = editedBrand;
-  shoes[index].description = editedDescription;
-  shoes[index].price = editedPrice;
-  shoes[index].url = editedURL;
-
-  // Close the modal
-  closeEditModal();
-
-  // Update the table or do any other necessary actions
-  setAndGet();
-  window.onload();
-}
-
-table.addEventListener("click", function (event) {
-  if (event.target.classList.contains("edit")) {
-    handleEditClick(event.target.value);
-  }
-  setAndGet();
-});
-
-//sorts admin prices from low to high
-let sorting = document.querySelector("#sorting");
-
-sorting.addEventListener("click", (event) => {
-  event.preventDefault();
-  shoes = shoes.sort((a, b) => {
-    if (a.price < b.price) {
-      return -1;
+    if (allBicycles.length === 0) {
+        table.innerHTML = `<div id="cen"><div class="spinner-border text-danger" role="status"><span class="visually-hidden">Loading...</span></div></div>`;
     } else {
-      return 1;
+        let products = allBicycles.map((item, index) => {
+            return `
+                <tr>
+                    <td class="text-white">${index + 1}</td>
+                    <td class="text-white">${item.name}</td>
+                    <td class="text-white">${item.subCategory}</td>
+                    <td class="text-white">${item.category}</td>
+                    <td class="text-white"><img src="${item.image}" style="width: 100px; height: 100px;"></td>
+                    <td class="text-white">${item.description}</td>
+                    <td class="text-white">${item.quantity}</td>
+                    <td class="text-white">R${item.price}</td>
+                    <td><button class="btn btn-primary edit" value="${index}" data-edit>edit</button></td>
+                    <td><button class="btn btn-primary delete" value="${index}" data-delete>delete</button></td>
+                </tr>
+            `;
+        });
+        table.innerHTML = `
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Subcategory</th>
+                    <th>Category</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>${products.join("")}</tbody>`;
     }
-  });
-  window.onload();
+}
+
+// Display bicycles on page load
+window.onload = function () {
+    // Check if data exists in localStorage
+    if (localStorage.getItem('allBicycles')) {
+        // If data exists, parse it and assign it to allBicycles array
+        allBicycles = JSON.parse(localStorage.getItem('allBicycles'));
+    } else {
+        // If no data exists, display the default bicycles
+        displayBicycles();
+    }
+
+    // Display bicycles
+    displayBicycles();
+};
+
+// Function to delete a bicycle item
+function deleteBicycle(index) {
+    allBicycles.splice(index, 1);
+    // Update the data in localStorage
+    localStorage.setItem('allBicycles', JSON.stringify(allBicycles));
+    displayBicycles(); // Update the table display after deletion
+}
+
+// Function to edit a bicycle item
+function editBicycle(index) {
+    // Populate the edit modal fields with current data
+    let bicycle = allBicycles[index];
+    document.getElementById("editName").value = bicycle.name;
+    document.getElementById("editSubCategory").value = bicycle.subCategory;
+    document.getElementById("editCategory").value = bicycle.category;
+    document.getElementById("editImage").value = bicycle.image;
+    document.getElementById("editDescription").value = bicycle.description;
+    document.getElementById("editQuantity").value = bicycle.quantity;
+    document.getElementById("editPrice").value = bicycle.price;
+
+    // Show the edit modal
+    document.getElementById("editModal").style.display = "block";
+
+    // Store the index in a data attribute for later use
+    document.getElementById("editModal").setAttribute("data-index", index);
+}
+
+// Function to save changes made in the edit modal
+function saveChanges() {
+    // Get the index of the item being edited from the data attribute
+    let index = parseInt(document.getElementById("editModal").getAttribute("data-index"));
+
+    // Update the item with the new values from the modal inputs
+    allBicycles[index].name = document.getElementById("editName").value;
+    allBicycles[index].subCategory = document.getElementById("editSubCategory").value;
+    allBicycles[index].category = document.getElementById("editCategory").value;
+    allBicycles[index].image = document.getElementById("editImage").value;
+    allBicycles[index].description = document.getElementById("editDescription").value;
+    allBicycles[index].quantity = parseInt(document.getElementById("editQuantity").value);
+    allBicycles[index].price = parseInt(document.getElementById("editPrice").value);
+
+    // Update the data in localStorage
+    localStorage.setItem('allBicycles', JSON.stringify(allBicycles));
+
+    // Close the edit modal
+    closeEditModal();
+
+    // Update the table display
+    displayBicycles();
+}
+
+// Function to close the edit modal
+function closeEditModal() {
+    // Hide the edit modal
+    document.getElementById("editModal").style.display = "none";
+}
+
+// Add event listener for delete button clicks
+document.querySelector("table").addEventListener("click", function (event) {
+    if (event.target.classList.contains("delete")) {
+      let index = event.target.value;
+      deleteBicycle(index);
+    }
+});
+
+// Add event listener for edit button clicks
+document.querySelector("table").addEventListener("click", function (event) {
+    if (event.target.classList.contains("edit")) {
+      let index = event.target.value;
+      editBicycle(index);
+    }
 });
