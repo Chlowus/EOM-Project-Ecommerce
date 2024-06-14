@@ -45,8 +45,9 @@ localStorage.setItem('TB-product-items',JSON.stringify(trailBikes));
 localStorage.setItem('EQ-product-items',JSON.stringify(equipment));
 
 function displayProducts(args) {
-    if (!args) {
-        roadBikes.forEach(item => {
+        let r = args.filter(item => item.subCategory == 'Road Bicycle')
+        sales1.innerHTML =''
+        r.forEach(item => {
             sales1.innerHTML += `
                 <div class="card" style="width: 28rem;">
                     <img src="${item.image}" class="card-img-top" alt="${item.id}">
@@ -59,8 +60,9 @@ function displayProducts(args) {
                 </div>
             `;
         });
-
-        trailBikes.forEach(item => {
+        let t = args.filter(item => item.subCategory == 'Trail Bicycle')
+        sales2.innerHTML =''
+        t.forEach(item => {
             sales2.innerHTML += `
                 <div class="card" style="width: 28rem;">
                     <img src="${item.image}" class="card-img-top" alt="...">
@@ -73,8 +75,12 @@ function displayProducts(args) {
                 </div>
             `;
         });
-
-        equipment.forEach(item => {
+        let e = args.filter(item => item.subCategory == 'Equipment')
+        sales3.innerHTML=''
+        if(e.length == 0){
+            sales3.innerHTML = `<h3>No products available</h3>`
+        }
+        e.forEach(item => {
             sales3.innerHTML += `
                 <div class="card" style="width: 28rem;">
                     <img src="${item.image}" class="card-img-top" alt="...">
@@ -87,24 +93,8 @@ function displayProducts(args) {
                 </div>
             `;
         });
-    } else {
-        args.forEach(item => {
-            sales1.innerHTML = '';
-            sales2.innerHTML = '';
-            sales3.innerHTML = '';
-            sales1.innerHTML += `
-                <div class="card" style="width: 28rem;">
-                    <img src="${item.image}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">${item.name}</h5>
-                        <p class="card-text">${item.description}</p>
-                        <h3>R${item.price}</h3>
-                        <a class="btn btn-primary sale-btn" data-itemId="${item.id}" onclick='addToCart(${JSON.stringify(item)})'>Add to cart</a>
-                    </div>
-                </div>
-            `;
-        });
-    }
+
+    
 }
 
 // Update the product list when changes are made in admin
@@ -115,8 +105,17 @@ window.addEventListener('storage', function(event){
     }
 });
 
-displayProducts();
+sales1.innerHTML = `<img src="https://chlowus.github.io/hostedimages/giphy.webp" alt="oops" loading="lazy" spinner>`
+sales2.innerHTML = `<img src="https://chlowus.github.io/hostedimages/giphy.webp" alt="oops" loading="lazy" spinner>`
+sales3.innerHTML = `<img src="https://chlowus.github.io/hostedimages/giphy.webp" alt="oops" loading="lazy" spinner>`
 
+setTimeout(() => {
+    displayProducts(allList);
+}, 
+3000)
+
+
+// Add to Cart
 let purchasedItems = JSON.parse(localStorage.getItem('purchasedGoods')) || [];
 
 function addToCart(item) {
@@ -140,6 +139,7 @@ document.querySelectorAll(".sale-btn").forEach(button => {
     });
 });
 
+// search
 let search = document.querySelector('#search');
 
 search.addEventListener('keyup', (event) => {
@@ -149,5 +149,24 @@ search.addEventListener('keyup', (event) => {
     }
     let filteredProducts = allList.filter(product =>
         product.name.toLowerCase().includes(searchTerm));
+        console.log(filteredProducts);
     displayProducts(filteredProducts);
+});
+
+// Filter
+let productSort = document.querySelector('.btn');
+let highest = false;
+productSort.addEventListener('click', () => {
+    try {
+        if (!highest) {
+            allList.sort((a, b) => b.price - a.price);
+            highest = true;
+        } else {
+            allList.sort((a, b) => a.price - b.price);
+            highest = false;
+        }
+        displayProducts(allList);
+    } catch (e) {
+        alert('This Function is under maintenance');
+    }
 });
