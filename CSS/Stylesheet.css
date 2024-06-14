@@ -16,7 +16,7 @@
 .sticky-top {
     position: fixed !important;
     top: 0;
-    width: 100%;
+    width: 100vw !important;
     z-index: 1000;
 }
 
@@ -363,27 +363,70 @@
     justify-content: center;
  }
 
+ @media screen and (max-width: 300px) {
+    #main-nav {
+        height: auto; 
+        width: 100vw;
+    }
+
+    #main .nav-logo img {
+        height: 150px; 
+        width: 100vw;
+        margin-top: 10px; 
+    }
+
+    #main .nav-title {
+        padding-top: 10px; 
+        font-size: 14px;
+    }
+
+    
+    .home-slider {
+        margin-top: 100px; 
+    }
+
+    .home-slide img {
+        margin-top: -50px; 
+        height: 500px; 
+    }
+
+    .home-products-cards .card{
+        margin-left: 0px;
+        margin-top: 110px;
+    }
+    
+
+    
+}
 
 /*  */
 /* ======================================== Products =============================================== */
 /*  */
 
+.p-main{
+    height: auto;
+}
+
+
 .product-body{
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 
 .image-container-products{
     top: 0;
     height: 120vh;
+    width: 98.92vw;
+    overflow-x: hidden !important;
 }
 
 .image-container-products img{
     margin-top: -80px;
     height: 103vh;
-    width: 100vw;
+    width: 98.92vw;
     object-fit: cover;
     margin-left: 0px;
+    overflow-x: hidden !important;
 }
 
 .image-container-products h1{
@@ -396,7 +439,7 @@
 }
 
 .p-products-container{
-    height: 800vh;
+    height: auto;
     width: 100vw;
 }
 
@@ -433,11 +476,11 @@
 .image-container-p-colnago{
    margin-top: 70px;
    height: 550px;
-   width: 100vw;
+   width: 98.92vw;
 }
 
 .image-container-p-colnago img{
-    width: 100vw;
+    width: 98.92vw;
     height: 550px;
  }
 
@@ -544,7 +587,7 @@
 .p-products-cardsRB{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
-    height: 100vh;
+    height: auto;
     width: 100vw;
 }
 
@@ -611,13 +654,26 @@
     font-size: 50px;
     font-weight: 400;
     text-align: center;
-    margin-top: 660px;
+    margin-top: 150px;
+}
+
+#SBP{
+    width: 150px;
+    color: white;
+    background-color: #000;
+}
+
+img[spinner]{
+    margin-left: 680px;
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
 }
 
 .p-products-cardsTB{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
-    height: 100vh;
+    height: auto;
     width: 100vw;
 }
 
@@ -684,13 +740,13 @@
     font-size: 50px;
     font-weight: 400;
     text-align: center;
-    margin-top: 660px;
+    margin-top: 150px;
 }
 
 .p-products-cardsEQ{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
-    height: 100vh;
+    height: auto;
     width: 100vw;
 }
 
@@ -1000,6 +1056,171 @@
     margin-left: 80px;
 }
 
+
+/*  */
+/* ================================================= Contact ===================================================================== */
+/*  */
+
+
+.text-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.contact-me {
+    margin-top: 100px;
+    margin-left: 200px;
+    font-family: Montserrat;
+}
+
+.contact-me h2{
+    font-size: 60px;
+}
+
+.la-instagram{
+    font-size: 150px;
+}
+
+.la-instagram:hover{
+    font-size: 150px;
+    color: #397D3C;
+}
+
+.la-facebook{
+    font-size: 150px;
+}
+
+.la-facebook:hover{
+    font-size: 150px;
+    color: #397D3C;
+}
+
+.lets-git h2{
+    text-align: center;
+    font-size: 90px;
+    color: #000;
+    font-family: Montserrat;
+    margin-top: -150px;
+    font-weight: 400;
+}
+
+.contact-form-box {
+    height: 480px;
+    width: 600px;
+    background-color: #1E1E1E;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    border: #397D3C solid 2px;
+    margin-top: 70px;
+}
+
+.form {
+    margin-left: 49px;
+    margin-top: 90px;
+}
+
+.form input {
+    width: 500px;
+    background-color: #397D3C;
+    color: white !important;
+    font-family: Montserrat;
+    border: none;
+    border-bottom: black 2px solid !important;
+    border-radius: 0px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-floating textarea {
+    width: 500px;
+    background-color: #397D3C;
+    color: white !important;
+    border: none;
+    font-family: Montserrat;
+    border-bottom: black 2px solid !important;
+    border-radius: 0px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+label {
+    font-family: Montserrat;
+    margin-left: 200px;
+    font-size: 18px;
+}
+
+.my-details {
+    display: flex;
+}
+
+.btn-contact {
+    background-color: rgba(255, 255, 255, 0.512);
+    font-family: mansalva;
+    font-size: 25px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-left: 180px;
+}
+
+.bi-telephone {
+    height: 80px;
+    width: 80px;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: white;
+}
+
+.listed-details h3 {
+    height: 100px;
+    width: 100px;
+    margin-left: 100px;
+    margin-top: 115px;
+    font-weight: 600;
+}
+
+
+
+@media only screen and (max-width:720px ) {
+    .h3-contact {
+        font-size: 30px;
+        font-family: Libre Franklin;
+        font-weight: 700;
+        margin-left: 150px;
+        margin-top: 20px;
+    }
+
+
+    .contact-me {
+        margin-top: 300px;
+        margin-left: 50px;
+        font-family: bitter;
+    }
+    
+    .contact-me h2{
+        font-size: 30px;
+    }
+
+    .contact-form-box {
+        height: 150px;
+        width: 300px;
+        background-color: #FCC5D3;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 30px;
+        border: #B38ECC solid 2px;
+        margin-top: 100px;
+    }
+    
+    .form {
+        margin-left: 49px;
+        margin-top: 30px;
+    }
+    
+    
+}
+
+
+
 /*  */
 /*===================================== Admin ============================================================== */
 /*  */
@@ -1026,16 +1247,16 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Change the opacity to 0.8 for a darker black */
     padding-top: 60px;
 }
 
 .modal-content {
-    background-color: #000;
+    background-color: #000 !important;
     color: #fff;
     margin: 5% auto;
     padding: 20px;
-    border: 1px solid #00f;
+    border: 1px solid #397D3C;
     width: 80%;
 }
 
@@ -1110,3 +1331,11 @@ body {
     border: 2px solid white;
     color: #fffeff; /* White button text */
 }
+
+#addbtn{
+    background-color: red;
+    color: #fff; /* White button text */
+    border: 1px solid white;
+    padding: 10px;
+    cursor: pointer;
+} 

@@ -168,3 +168,55 @@ document.querySelector("table").addEventListener("click", function (event) {
       editBicycle(index);
     }
 });
+
+function addProduct() {
+    // Get input values
+    let name = document.getElementById("addName").value;
+    let subCategory = document.getElementById("addSubCategory").value;
+    let category = document.getElementById("addCategory").value;
+    let image = document.getElementById("addImage").value;
+    let description = document.getElementById("addDescription").value;
+    let quantity = parseInt(document.getElementById("addQuantity").value);
+    let price = parseInt(document.getElementById("addPrice").value);
+
+    // Create a new product object
+    let newProduct = new CreateBicycle(allBicycles.length + 1, name, subCategory, category, image, description, quantity, price);
+
+    // Add the new product to the array
+    allBicycles.push(newProduct);
+
+    // Update the data in localStorage
+    localStorage.setItem('allBicycles', JSON.stringify(allBicycles));
+
+    // Close the modal
+    closeAddModal();
+
+    // Update the table display
+    displayBicycles();
+    window.location.reload()
+}
+
+function closeAddModal() {
+    // Hide the add modal
+    document.getElementById("addModal").style.display = "none";
+    window.location.reload()
+}
+
+// Sort
+// Sorting
+let productSort = document.querySelector('.btn');
+let highest = false;
+productSort.addEventListener('click', () => {
+    try {
+        if (!highest) {
+            allBicycles.sort((a, b) => b.price - a.price);
+            highest = true;
+        } else {
+            allBicycles.sort((a, b) => a.price - b.price);
+            highest = false;
+        }
+        displayBicycles();
+    } catch (e) {
+        alert('This Function is under maintenance');
+    }
+});
